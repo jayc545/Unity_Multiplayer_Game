@@ -8,6 +8,10 @@ namespace Unity_Multiplatyer___Game_Server
         {
             //Set the Tittle for the console.
             Console.Title = "Game Server";
+
+
+            Server.Start(50, 26950);
+
             Console.ReadKey();
         }
     }

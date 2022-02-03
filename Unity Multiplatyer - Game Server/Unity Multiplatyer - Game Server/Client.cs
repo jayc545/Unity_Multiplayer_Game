@@ -4,12 +4,13 @@ using System.Text;
 using System.Net;
 using System.Net.Sockets;
 
-namespace GameServer
+namespace Unity_Multiplatyer___Game_Server
+
 {
     /// <summary>
     /// 
     /// </summary>
-    class Client
+    public class Client
     {
         public static int dataBufferSize = 4096;
         public int id;

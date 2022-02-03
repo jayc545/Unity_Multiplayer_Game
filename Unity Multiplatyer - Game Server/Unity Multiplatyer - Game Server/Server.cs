@@ -4,9 +4,10 @@ using System.Text;
 using System.Net;
 using System.Net.Sockets;
 
-namespace GameServer
+namespace Unity_Multiplatyer___Game_Server
+
 {
-    class Server
+    public class Server
     {
         /// <summary>
         /// 
@@ -16,7 +17,7 @@ namespace GameServer
         public static Dictionary<int, Client> clients = new Dictionary<int, Client>();
         private static TcpListener tcpListener;
 
-        public void Start(int _maxPlayers, int _port)
+        public static void Start(int _maxPlayers, int _port)
         {
             MaxPlayers = _maxPlayers;
             Port = _port;
@@ -24,6 +25,7 @@ namespace GameServer
             ///Text for starting the Server
             ///
             Console.WriteLine("Starting Server.....");
+            InitializeServerData();
 
             tcpListener = new TcpListener(IPAddress.Any, Port);
             tcpListener.Start();
