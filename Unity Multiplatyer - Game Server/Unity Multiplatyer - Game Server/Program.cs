@@ -6,7 +6,9 @@ namespace Unity_Multiplatyer___Game_Server
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //Set the Tittle for the console.
+            Console.Title = "Game Server";
+            Console.ReadKey();
         }
     }
 }
