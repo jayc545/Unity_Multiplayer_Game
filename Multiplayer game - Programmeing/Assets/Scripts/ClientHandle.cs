@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using UnityEngine;
 
 public class ClientHandle : MonoBehaviour
@@ -12,5 +13,7 @@ public class ClientHandle : MonoBehaviour
         Debug.Log($"Message from Server: {_msg}");
         Client.instance.myId = myId;
         ClientSend.WelcomeReceived();
+
+        Client.instance.udp.Connected(((IPEndPoint)Client.instance.tcp.socket.Client.LocalEndPoint).Port);
     }
 }

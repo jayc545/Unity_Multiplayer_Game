@@ -19,6 +19,7 @@ namespace Unity_Multiplatyer___Game_Server
         public static Dictionary<int, PacketHandler> packetHandlers;
 
         private static TcpListener tcpListener;
+        private static UdpClient udpListener;
 
         public static void Start(int _maxPlayers, int _port)
         {
@@ -33,6 +34,9 @@ namespace Unity_Multiplatyer___Game_Server
             tcpListener = new TcpListener(IPAddress.Any, Port);
             tcpListener.Start();
             tcpListener.BeginAcceptTcpClient(new AsyncCallback(TCPConnectedCallBack), null);
+
+            udpListener = new UdpClient(Port);
+            udpListener.BeginReceive(UDPReseiveCallBack, null);
 
             Console.WriteLine($"Server started on {Port}.");
         }
@@ -53,6 +57,14 @@ namespace Unity_Multiplatyer___Game_Server
             }
 
             Console.WriteLine($"{_client.Client.RemoteEndPoint} failed to connect : Server full!");
+        }
+
+        private static void UDPReseiveCallBack(IAsyncResult _result)
+        {
+            try
+            {
+                IPEndPoint _clientEndPoint = new IPEndPoint(IPAddress.Any, 0);
+            }
         }
 
         private static void InitializeServerData()
