@@ -64,6 +64,31 @@ namespace Unity_Multiplatyer___Game_Server
             try
             {
                 IPEndPoint _clientEndPoint = new IPEndPoint(IPAddress.Any, 0);
+                byte[] _data = udpListener.EndReceive(_result, ref _clientEndPoint);
+                udpListener.BeginReceive(UDPReseiveCallBack, null);
+                
+                if(_data.Length < 4)
+                {
+                    return;
+                }
+
+                using (Packet _packet = new Packet(_data))
+                {
+                    int _clientId = _packet.ReadInt();
+
+                    if(_clientId == 0)
+                    {
+                        return;
+                    }
+
+                    if(clients[_clientId].udp.endPoint == null)
+                    {
+                        clients[_clientId].udp.Connect(_clientEndPoint);
+                        return;
+                    }
+
+                    if(clients[_clientId].udp.endPoint.ToString)
+                }
             }
         }
 
