@@ -96,6 +96,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20d8d9993a45c5040bc9b19d07c0c052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 8488957710509105573}
+  sensitivity: 100
+  clampangle: 85
 --- !u!1 &5668070183909628736
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,6 +244,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   username: 
+  health: 0
+  maxHealth: 0
+  model: {fileID: 6271973106551263954}
 --- !u!114 &7295653440346762256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,3 +259,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f6d1c4292a72dd48bfb480c08495528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camTransform: {fileID: 6936442205200404741}
