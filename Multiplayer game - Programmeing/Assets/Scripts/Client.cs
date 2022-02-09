@@ -253,6 +253,9 @@ public class Client : MonoBehaviour
         packetHandlers = new Dictionary<int, PacketHandler>()
         {
             {  (int)ServerPackets.welcome, ClientHandle.Welcome },
+            {  (int)ServerPackets.spawnPlayer, ClientHandle.SpawnPlayer },
+
+
 
         };
         Debug.Log("Initialized packet");
