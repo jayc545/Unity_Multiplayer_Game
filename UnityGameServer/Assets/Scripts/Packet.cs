@@ -13,7 +13,10 @@ using UnityEngine;
         playerRotation,
         playerDisconnected,
         playerHealth,
-        playerRespawned
+        playerRespawned,
+        createItemsSpawner,
+        itemSpawned,
+        itemPickedUp
     }
 
     /// <summary>Sent from client to server.</summary>
@@ -22,6 +25,7 @@ using UnityEngine;
         welcomeReceived = 1,
         playerMovement,
         playerShoot,
+        playerThrowItem,
     }
 
     public class Packet : IDisposable

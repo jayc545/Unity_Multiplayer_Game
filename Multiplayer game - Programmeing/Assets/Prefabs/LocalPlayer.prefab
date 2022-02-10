@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 8488957710509105573}
-  sensitivity: 100
+  sensitivity: 500
   clampangle: 85
 --- !u!1 &5668070183909628736
 GameObject:
@@ -246,6 +246,7 @@ MonoBehaviour:
   username: 
   health: 0
   maxHealth: 100
+  itemCount: 0
   model: {fileID: 6271973106551263954}
 --- !u!114 &7295653440346762256
 MonoBehaviour:

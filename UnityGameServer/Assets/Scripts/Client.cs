@@ -217,8 +217,15 @@ public class Client
                 ServerSend.SpawnPlayer(_client.id, player);
             }
         }
-    }
 
+        foreach (Itemspawner _itemspawner in Itemspawner.spawners.Values)
+        {
+            ServerSend.CreateItemSpawner(id, _itemspawner.spawnerId, _itemspawner.transform.position, _itemspawner.hasItem);
+        }
+    }
+    /// <summary>
+    ///  Disconnects the client and stops all network traffic.
+    /// </summary>
     private void Disconnect()
     {
         Debug.Log($"{tcp.socket.Client.RemoteEndPoint} has disconnected.");
