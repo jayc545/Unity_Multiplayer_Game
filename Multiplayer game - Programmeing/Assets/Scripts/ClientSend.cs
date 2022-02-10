@@ -58,7 +58,7 @@ public class ClientSend : MonoBehaviour
 
     public static void PlayerThrowItem(Vector3 _facing)
     {
-        using (Packet _packet = new Packet((int)ClientPackets.playerShoot))
+        using (Packet _packet = new Packet((int)ClientPackets.playerThrowItem))
         {
             _packet.Write(_facing);
 
